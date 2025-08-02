@@ -38,18 +38,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'drf_yasg',
     'rest_framework',
-    # 'corsheaders',
     'company',
 
     
 ]
 
 MIDDLEWARE = [
-    # 'corsheaders.middleware.CorsMiddleware',  # CORS birinchi bo'lishi kerak
-    # 'django.middleware.common.CommonMiddleware',
-
+    'corsheaders.middleware.CorsMiddleware',             # 👈 1-bo‘lib yozish tavsiya qilinadi
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -75,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-# CORS_ALLOW_ALL_ORIGINS = True  # Har qanday frontendga ruxsat beriladi
+CORS_ALLOW_ALL_ORIGINS = True  # Har qanday frontendga ruxsat beriladi
 
 # ROOT_URLCONF = 'company.urls'  # Loyihangiz nomi
 WSGI_APPLICATION = 'config.wsgi.application'
