@@ -42,9 +42,11 @@ INSTALLED_APPS = [
     'drf_yasg',
     'rest_framework',
     'company',
+    'users',
 
     
 ]
+AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',             # 👈 1-bo‘lib yozish tavsiya qilinadi
